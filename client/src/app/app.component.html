@@ -1,0 +1,10 @@
+<div class="main" [style.background-image]="background">
+  <app-controls class="controls"
+                [zones]="zones"
+                [currentZone]="currentZone"
+                [currentTrack]="currentTrack"
+                (changedZone)="onChangedZone($event)"
+                (changedTrack)="onChangedTrack($event)"
+                (finishedTrack)="onFinishedTrack($event)"
+  ></app-controls>
+</div>

@@ -1,0 +1,6 @@
+<mat-nav-list class="speakers">
+  <a *ngFor="let zone of data.zones" mat-list-item (click)="onClick(zone)" [ngClass]="{'active-speaker': zone == data.current_zone}">
+    <mat-icon>speaker</mat-icon>
+    <span mat-line> {{ zone.player_name }}</span>
+  </a>
+</mat-nav-list>

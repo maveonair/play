@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #121212;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.controls {
+  flex: none;
+  width: 100%;
+  margin: auto auto 0 auto;
+}

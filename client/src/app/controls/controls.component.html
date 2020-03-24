@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="current-track" *ngIf="currentTrack">
+    <div>
+      <span class="artist">{{ currentTrack.artist }}</span>
+      <br>
+      {{ currentTrack.title }}
+    </div>
+  </div>
+
+  <div>
+      <div class="play-controls">
+        <button class="control" (click)="onPreviousTrack()">
+          <mat-icon>skip_previous</mat-icon>
+        </button>
+
+        <button class="control">
+          <mat-icon *ngIf="currentZone && currentZone.is_playing" class="toggle-play" (click)="onTogglePlay()">pause</mat-icon>
+          <mat-icon *ngIf="currentZone && !currentZone.is_playing" class="toggle-play" (click)="onTogglePlay()">play_arrow</mat-icon>
+        </button>
+
+        <button class="control" (click)="onNextTrack()">
+          <mat-icon>skip_next</mat-icon>
+        </button>
+      </div>
+
+      <mat-progress-bar  *ngIf="trackPosition" class="audio-progress-bar" mode="determinate" [value]="trackPosition.getValue()"></mat-progress-bar>
+  </div>
+
+  <div class="room-controls">
+    <button class="control" (click)="openRoomSelection()">
+      <mat-icon>speaker_group</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class="current-zone" *ngIf="currentZone">
+  <mat-icon>volume_up</mat-icon>
+  Listening on <strong>{{ currentZone.player_name }}</strong>
+</div>
