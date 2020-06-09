@@ -10,6 +10,6 @@ A simple web based Sonos Controller to select rooms and play/pause music.
 
 ```
 $ docker build -t play .
-$ docker run --net=host play
+$ docker run --net=host -e PLAY_PORT=5000 play
 ```
 
